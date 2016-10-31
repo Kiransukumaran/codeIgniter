@@ -23,9 +23,9 @@ class Updatemodel extends CI_Controller
     *@param void
     *@return null
 	**/
-	public function updateData($datas,$email)
+	public function updateData($datas)
 	{
-	    $this->db->where('email', $email);
+	    $this->db->where('email', $datas['email']);
 	    $result=$this->db->update('updateuser',$datas);
 	    return $result;
 	}

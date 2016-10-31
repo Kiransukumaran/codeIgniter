@@ -34,7 +34,7 @@ class Updatecontroller extends CI_Controller
         $this->load->model('updatemodel');
         
         if ($this->updatemodel->checkIfEmailExists($credentials['email'])) {
-        	if ($this->updatemodel->updateData($credentials,$email)) {
+        	if ($this->updatemodel->updateData($credentials)) {
         	   echo "value is updated";
         	}
         	else {
@@ -42,7 +42,7 @@ class Updatecontroller extends CI_Controller
         	}   
 		}
 		else{
-		    if ($this->updatemodel->insertData($credentials,$email)) {
+		    if ($this->updatemodel->insertData($credentials)) {
         	   echo "value is inserted";
         	}
         	else {
